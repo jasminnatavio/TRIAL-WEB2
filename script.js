@@ -216,14 +216,13 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         return;
     }
 
-    // If validation passes, show success message
-    showFormMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+    // Open a prepared email in the visitor's default mail application.
+    const recipient = 'jasmin.natavio.p@gmail.com';
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
-    // Clear form fields
-    document.getElementById('contactForm').reset();
-
-    // In a real implementation, you would send this data to a server
-    console.log('Form submitted:', { name, email, message });
+    showFormMessage('Your email app is opening with your message ready to send.', 'success');
 });
 
 function isValidEmail(email) {

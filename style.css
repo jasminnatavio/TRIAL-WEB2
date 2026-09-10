@@ -563,6 +563,18 @@ body {
     box-shadow: var(--shadow);
 }
 
+.live-funnel-card {
+    border-top: 4px solid var(--success-color);
+}
+
+.live-funnel-card .portfolio-category {
+    background-color: var(--success-color);
+}
+
+.live-funnel-card .btn {
+    align-self: flex-start;
+}
+
 .portfolio-category {
     display: inline-block;
     align-self: flex-start;
